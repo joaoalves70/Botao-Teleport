@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Titulo</title>
+  <style>
+
+    body {
+      text-align: center;
+      margin-top: 200px;
+      font-family: Arial, sans-serif;
+      background: purple;
+    }
+    
+    h1 {
+      font-size: 24px;
+      align-items: center;
+    }
+    
+    #yes-button, #no-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      border-style: hidden;
+      border-radius: 10%;
+    }
+
+    .f1 {
+      max-width: 15%;
+    }
+
+    .max {
+      max-width: 10%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Pergunta</h1>
+  <button id="yes-button">Sim</button>
+  <button id="no-button">Não</button>
+
+  <script>
+    var teleportCount = 0;
+    
+    function teleportButton() {
+      var button = document.getElementById("no-button");
+      var screenWidth = window.innerWidth;
+      var screenHeight = window.innerHeight;
+      
+      var randomX = Math.floor(Math.random() * screenWidth);
+      var randomY = Math.floor(Math.random() * screenHeight);
+      
+      button.style.position = "absolute";
+      button.style.left = randomX + "px";
+      button.style.top = randomY + "px";
+      
+      teleportCount++;
+      
+      if (teleportCount === 3) {
+        button.onclick = function() {
+          button.style.display = "none";
+        };
+      }
+    }
+    
+    document.getElementById("no-button").addEventListener("mouseover", teleportButton);
+    
+    document.getElementById("yes-button").addEventListener("click", function() {
+      window.location.href = "https://twitter.com/euxeti/status/1665545007997100038?s=46&t=5aCi2Qx7Q6Qw_slg5ni0XQ";
+    });
+  </script>
+</body>
+</html>
